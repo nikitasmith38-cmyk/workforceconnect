@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Registration Records</title>
+
+  <style>
+    body { font-family: Arial, sans-serif; max-width: 900px; margin: 60px auto; padding: 0 20px; background: #f4f4f4; }
+    h1 { color: #1a3a5c; }
+    table { width: 100%; border-collapse: collapse; background: white; box-shadow: 0 2px 8px rgba(0,0,0,0.1); }
+    th { background: #1a3a5c; color: white; padding: 12px 14px; text-align: left; }
+    td { padding: 10px 14px; border-bottom: 1px solid #eee; font-size: 13px; }
+    tr:hover { background: #f0f7ff; }
+    a { display: inline-block; margin-top: 20px; color: #1a3a5c; }
+    .empty { padding: 20px; color: #888; font-style: italic; }
+  </style>
+</head>
+<body>
+<h1>Registration Records</h1>
+<table>
+  <thead>
+    <tr>
+      <th>First Name</th><th>Last Name</th><th>Email</th>
+      <th>City</th><th>State</th><th>Submitted</th>
+    </tr>
+  </thead>
+  <tbody>
+    {% if records %}
+    {% for record in records %}
+    <tr>
+      <td>{{ record[0] }}</td><td>{{ record[1] }}</td>
+      <td>{{ record[2] }}</td><td>{{ record[3] }}</td>
+      <td>{{ record[4] }}</td><td>{{ record[5] }}</td>
+    </tr>
+    {% endfor %}
+    {% else %}
+    <tr><td colspan="6" class="empty">No registrations yet.</td></tr>
+    {% endif %}
+  </tbody>
+</table>
+<a href="/">Back to Registration Form</a>
+</body>
+</html>
