@@ -1,3 +1,6 @@
 venv/
-pycache/
-*.pyc
+__pycache__/
+*.pem
+venv/
+__pycache__/
+*.pem
